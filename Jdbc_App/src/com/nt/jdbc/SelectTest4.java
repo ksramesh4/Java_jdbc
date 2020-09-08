@@ -21,7 +21,7 @@ public class SelectTest4 {
 		     // register jdbc driver
 				//Class.forName("oracle.jdbc.driver.OracleDriver");
 			//establish the connection
-				con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system", "manager");
+				con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system", "ramesh");
 			//create JDBC Statement object
 				if(con!=null)
 					st=con.createStatement();

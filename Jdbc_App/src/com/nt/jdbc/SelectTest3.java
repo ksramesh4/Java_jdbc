@@ -21,7 +21,7 @@ public class SelectTest3 {
 			//read inputs
 			sc=new Scanner(System.in);
 			if(sc!=null) {
-				System.out.println("Enter Employee number");
+				System.out.println("Enter pid");
 				no=sc.nextInt();
 			}//if
 			
@@ -34,14 +34,14 @@ public class SelectTest3 {
 				 st=con.createStatement();
 			 //prepare SQL Query
 			    //select empno,ename,job,sal from  emp where empno=7499;
-			   query="SELECT EMPNO,ENAME,JOB,SAL FROM  EMP WHERE EMPNO="+no;
+			   query="select dob,years,months,days from p_d1 WHERE pid="+no;
 			   //send and execute in DB s/w 
 			   if(st!=null)
 				   rs=st.executeQuery(query);
 			   //process the ResultSet obj
 			   if(rs!=null) {
 				    if(rs.next())
-	                      System.out.println(rs.getInt(1)+" "+rs.getString(2)+"  "+rs.getString(3)+"   "+rs.getFloat(4));			    	
+	                      System.out.println(rs.getDate(1)+" "+rs.getInt(2)+"  "+rs.getInt(3)+"   "+rs.getInt(4));			    	
 				    else
 				    	System.out.println("No records found");
 			   }//if
